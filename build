@@ -1,0 +1,18 @@
+#!/bin/bash -xe
+
+ACTOOL=/usr/share/rkt/bin/actool
+SRCDIR=${1}
+NAME="$(basename ${SRCDIR})"
+TMPDIR=${1}/${NAME}
+OUTDIR=$PWD
+
+${ACTOOL} -debug validate ${SRCDIR}/manifest.json
+mkdir -p ${TMPDIR}/rootfs/bin/
+pushd ${SRCDIR}
+./build
+popd
+cp ${SRCDIR}/hello ${TMPDIR}/rootfs/bin/
+rm ${SRCDIR}/hello
+cp ${SRCDIR}/manifest.json ${TMPDIR}/manifest
+${ACTOOL} -debug build --overwrite ${TMPDIR} ${OUTDIR}/${NAME}.aci 
+rm -Rf ${TMPDIR}

@@ -1,0 +1,18 @@
+{
+    "acKind": "ImageManifest",
+    "acVersion": "0.5.1",
+    "name": "steveej/hellogo",
+    "app":{
+        "exec":[
+            "/bin/hello"
+        ],
+        "user": "0",
+        "group": "0"
+    },
+    "annotations":[
+        {
+            "name":"authors",
+            "value":"steveeJ <code@stefanjunker.de>"
+        }
+    ]
+}
