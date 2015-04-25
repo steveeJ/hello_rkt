@@ -1,4 +1,4 @@
-#!/bin/bash -ex
+#!/bin/bash -e
 ABS_PATH="$(cd "${0%/*}" 2>/dev/null; echo "$PWD"/"${0##*/}")"
 SCRIPT_DIR="$(dirname ${ABS_PATH})"
 ACTOOL=/usr/share/rkt/bin/actool
@@ -21,5 +21,6 @@ ${ACTOOL} -debug validate manifest.json
 cp manifest.json ${TMPDIR}/manifest
 ./build "${TMPDIR}"
 popd
+tree ${TMPDIR}
 ${ACTOOL} -debug build --overwrite ${TMPDIR} ${OUTDIR}/${NAME}.aci 
 rm -Rf ${TMPDIR}
