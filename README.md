@@ -1,4 +1,4 @@
-# hello_rkt
+# hello\_rkt
 
 This is a repository to document the first steps with
 [coreos/rkt](https://github.com/coreos/rkt). It shall eventually evolve to being
@@ -10,14 +10,16 @@ Let's have an overview of which pieces build the puzzle.
 
 ### App Containers
 
-#### [ACI (App Container Image)](https://github.com/appc/spec/blob/master/SPEC.md#app-container-specification)
-#### [Pods](https://github.com/appc/spec/blob/master/SPEC.md#pod-manifest-schema)
-TODO
-
 #### Building
 TODO
 
-#### Signing
+#### Signing & Verification
+TODO
+
+#### [ACI (App Container Image)](https://github.com/appc/spec/blob/master/SPEC.md#app-container-specification)
+TODO
+
+#### [Pods](https://github.com/appc/spec/blob/master/SPEC.md#pod-manifest-schema)
 TODO
 
 ## *rkt* (and related tools) Usage
