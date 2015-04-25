@@ -1,0 +1,19 @@
+{
+    "acVersion": "0.5.1",
+    "acKind": "ImageManifest",
+    "name": "steveej/busybox",
+    "app": {
+        "exec": [
+            "/bin/busybox",
+            "sh"
+        ],
+        "user": "0",
+        "group": "0"
+    },
+    "annotations": [
+        {
+            "name":"authors",
+            "value":"steveeJ <code@stefanjunker.de>"
+        }
+    ]
+}
