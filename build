@@ -1,18 +1,25 @@
-#!/bin/bash -xe
-
+#!/bin/bash -ex
+ABS_PATH="$(cd "${0%/*}" 2>/dev/null; echo "$PWD"/"${0##*/}")"
+SCRIPT_DIR="$(dirname ${ABS_PATH})"
 ACTOOL=/usr/share/rkt/bin/actool
-SRCDIR=${1}
-NAME="$(basename ${SRCDIR})"
-TMPDIR=${1}/${NAME}
-OUTDIR=$PWD
 
-${ACTOOL} -debug validate ${SRCDIR}/manifest.json
-mkdir -p ${TMPDIR}/rootfs/bin/
+if [[ -z $1 ]]; then
+    echo Please provide the ACI source directory, relative to the build script.
+    echo Usage: ./build hello_go
+    exit 1
+fi
+
+SRCDIR=${SCRIPT_DIR}/${1}
+NAME="$(basename ${SRCDIR})"
+TMPDIR=${SCRIPT_DIR}/.tmp/${NAME}
+OUTDIR=$PWD/out
+
+[[ -d ${TMPDIR} ]] && rm -Rf "${TMPDIR}"
+mkdir -p ${TMPDIR} ${OUTDIR}
 pushd ${SRCDIR}
-./build
+${ACTOOL} -debug validate manifest.json
+cp manifest.json ${TMPDIR}/manifest
+./build "${TMPDIR}"
 popd
-cp ${SRCDIR}/hello ${TMPDIR}/rootfs/bin/
-rm ${SRCDIR}/hello
-cp ${SRCDIR}/manifest.json ${TMPDIR}/manifest
 ${ACTOOL} -debug build --overwrite ${TMPDIR} ${OUTDIR}/${NAME}.aci 
 rm -Rf ${TMPDIR}

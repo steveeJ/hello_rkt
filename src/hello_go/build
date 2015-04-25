@@ -1,0 +1,7 @@
+#!/bin/bash
+TMPDIR=$1
+
+mkdir -p ${TMPDIR}/rootfs/bin/
+CGO_ENABLED=0 go build -a -installsuffix cgo hello.go
+cp hello ${TMPDIR}/rootfs/bin/
+rm hello

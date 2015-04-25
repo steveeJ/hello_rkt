@@ -8,15 +8,17 @@ with this new piece of technology.
 ## Background Information
 Let's have an overview of which pieces build the puzzle.
 
-### [ACI (App Container Image)](https://github.com/appc/spec/blob/master/SPEC.md#app-container-specification)
+### App Containers
+
+#### [ACI (App Container Image)](https://github.com/appc/spec/blob/master/SPEC.md#app-container-specification)
+#### [Pods](https://github.com/appc/spec/blob/master/SPEC.md#pod-manifest-schema)
 TODO
 
-### Pods
+#### Building
 TODO
 
-### Signing
+#### Signing
 TODO
-
 
 ## *rkt* (and related tools) Usage
 The docs around *rkt* seem to be very detailed about the implementation and
