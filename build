@@ -23,4 +23,6 @@ cp manifest.json ${TMPDIR}/manifest
 popd
 tree ${TMPDIR}
 ${ACTOOL} -debug build --overwrite ${TMPDIR} ${OUTDIR}/${NAME}.aci 
+[[ ! -e ${OUTDIR}/${NAME}.aci.asc ]] || rm ${OUTDIR}/${NAME}.aci.asc 
+gpg --batch --armor --output ${OUTDIR}/${NAME}.aci.asc --detach-sig ${OUTDIR}/${NAME}.aci
 rm -Rf ${TMPDIR}
