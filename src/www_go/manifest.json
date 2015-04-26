@@ -1,0 +1,27 @@
+{
+    "acKind": "ImageManifest",
+    "acVersion": "0.5.1",
+    "name": "steveej/wwwgo",
+    "app":{
+        "user": "0",
+        "group": "0",
+        "exec":[
+            "/bin/www",
+            "/var/www",
+            "8080"
+        ],
+        "mountPoints": [
+            {
+                "name": "www",
+                "path": "/var/www",
+                "readOnly": true
+            }
+        ]
+    },
+    "annotations":[
+        {
+            "name":"authors",
+            "value":"steveeJ <code@stefanjunker.de>"
+        }
+    ]
+}

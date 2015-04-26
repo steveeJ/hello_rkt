@@ -1,0 +1,8 @@
+#!/bin/bash
+TMPDIR=$1
+
+mkdir -p ${TMPDIR}/rootfs/{bin,var/www}
+touch ${TMPDIR}/rootfs/var/www/YOU_SHOULD_NOT_SEE_ME
+CGO_ENABLED=0 go build -a -installsuffix cgo www.go
+cp www ${TMPDIR}/rootfs/bin/
+rm www
