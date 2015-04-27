@@ -1,0 +1,25 @@
+{
+    "acKind": "ImageManifest",
+    "acVersion": "0.5.1",
+    "name": "steveej/dummy-rootfs",
+    "app":{
+        "user": "0",
+        "group": "0",
+        "exec":[
+            "/bin/bash"
+        ],
+        "mountPoints": [
+            {
+                "name": "root",
+                "path": "/",
+                "readOnly": false
+            }
+        ]
+    },
+    "annotations":[
+        {
+            "name":"authors",
+            "value":"steveeJ <code@stefanjunker.de>"
+        }
+    ]
+}
