@@ -1,0 +1,4 @@
+#!/bin/bash
+TMPDIR=$1
+
+mkdir -p ${TMPDIR}/rootfs/.empty_rootfs
