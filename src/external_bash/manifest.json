@@ -1,7 +1,7 @@
 {
     "acKind": "ImageManifest",
     "acVersion": "0.5.1",
-    "name": "steveej/dummy-rootfs",
+    "name": "steveej/external-bash",
     "app":{
         "user": "0",
         "group": "0",
