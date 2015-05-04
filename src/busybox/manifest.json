@@ -3,6 +3,14 @@
     "acKind": "ImageManifest",
     "name": "steveej/busybox",
     "app": {
+        "eventHandlers":[
+            {
+                "name": "pre-start",
+                "exec":[
+                    "/.prepare.sh"
+                ]
+            }
+        ],
         "exec": [
             "/bin/busybox",
             "sh"
