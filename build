@@ -21,7 +21,7 @@ ${ACTOOL} -debug validate manifest.json
 cp manifest.json ${TMPDIR}/manifest
 ./build "${TMPDIR}"
 popd
-tree ${TMPDIR}
+tree -a ${TMPDIR}
 ${ACTOOL} -debug build --overwrite ${TMPDIR} ${OUTDIR}/${NAME}.aci 
 [[ ! -e ${OUTDIR}/${NAME}.aci.asc ]] || rm ${OUTDIR}/${NAME}.aci.asc 
 gpg --batch --armor --output ${OUTDIR}/${NAME}.aci.asc --detach-sig ${OUTDIR}/${NAME}.aci
