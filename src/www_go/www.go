@@ -10,7 +10,7 @@ import (
 func main() {
 	if len(os.Args) < 2 {
 		fmt.Printf("Not enough arguments.")
-		exit(1)
+		os.Exit(1)
 	}
 	root_dir := os.Args[1]
 	port := ":" + os.Args[2]
