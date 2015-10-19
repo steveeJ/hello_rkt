@@ -1,6 +1,6 @@
 #!/bin/bash
 TMPDIR=$1
 
-mkdir -p ${TMPDIR}/rootfs/{etc,bin,usr/bin/,sbin/,usr/sbin,var/tmp}
+mkdir -p ${TMPDIR}/rootfs/{dev,etc,bin,usr/bin/,sbin/,usr/sbin,var/tmp}
 cp prepare.sh ${TMPDIR}/rootfs/.prepare.sh
 cp /bin/busybox ${TMPDIR}/rootfs/bin/busybox

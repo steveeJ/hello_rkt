@@ -1,7 +1,11 @@
 {
-    "acVersion": "0.5.1",
+    "acVersion": "0.7.1",
     "acKind": "ImageManifest",
     "name": "steveej/busybox",
+    "labels": [
+            {"name": "os", "value": "linux"},
+            {"name": "arch", "value": "amd64"}
+    ],
     "app": {
         "eventHandlers":[
             {
@@ -11,12 +15,12 @@
                 ]
             }
         ],
+        "user": "0",
+        "group": "0",
         "exec": [
             "/bin/busybox",
             "sh"
-        ],
-        "user": "0",
-        "group": "0"
+        ]
     },
     "annotations": [
         {
